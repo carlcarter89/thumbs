@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thumb Feedback</title>
+  <style>
+    /* Style the thumb icons */
+    .thumb-icon {
+      font-size: 24px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    /* Style the thumb-up icon */
+    .thumb-up {
+      color: grey;
+    }
+
+    /* Style the thumb-down icon */
+    .thumb-down {
+      color: grey;
+    }
+
+    /* Change color on hover */
+    .thumb-up:hover {
+      color: green;
+    }
+
+    .thumb-down:hover {
+      color: red;
+    }
+
+    /* Hide the text box by default */
+    .feedback-text {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Thumb-up icon -->
+<span class="thumb-icon thumb-up" onclick="showFeedback('up')">👍</span>
+
+<!-- Thumb-down icon -->
+<span class="thumb-icon thumb-down" onclick="showFeedback('down')">👎</span>
+
+<!-- Feedback text box -->
+<div id="feedbackBox" class="feedback-text">
+  <label for="feedback">[Optional] Please leave your feedback:</label><br>
+  <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+</div>
+
+<script>
+  function showFeedback(type) {
+    // Show the feedback text box
+    const feedbackBox = document.getElementById("feedbackBox");
+    feedbackBox.style.display = "block";
+
+    // Focus on the feedback textarea
+    const feedbackTextarea = document.getElementById("feedback");
+    feedbackTextarea.focus();
+
+    // Update the placeholder based on the thumb type
+    if (type === "up") {
+      feedbackTextarea.placeholder = "Thank you for your positive feedback!";
+    } else if (type === "down") {
+      feedbackTextarea.placeholder = "We're sorry to hear that. Please provide your feedback.";
+    }
+  }
+</script>
+
+</body>
+</html>
