@@ -31,9 +31,16 @@
       color: red;
     }
 
-    /* Hide the text box by default */
-    .feedback-text {
+    /* Style the feedback form */
+    .feedback-form {
       display: none;
+    }
+
+    /* Style the submit button */
+    .submit-button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -45,17 +52,18 @@
 <!-- Thumb-down icon -->
 <span class="thumb-icon thumb-down" onclick="showFeedback('down')">👎</span>
 
-<!-- Feedback text box -->
-<div id="feedbackBox" class="feedback-text">
+<!-- Feedback form -->
+<div id="feedbackForm" class="feedback-form">
   <label for="feedback">[Optional] Please leave your feedback:</label><br>
-  <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+  <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+  <button class="submit-button" onclick="submitFeedback()">Submit</button>
 </div>
 
 <script>
   function showFeedback(type) {
-    // Show the feedback text box
-    const feedbackBox = document.getElementById("feedbackBox");
-    feedbackBox.style.display = "block";
+    // Show the feedback form
+    const feedbackForm = document.getElementById("feedbackForm");
+    feedbackForm.style.display = "block";
 
     // Focus on the feedback textarea
     const feedbackTextarea = document.getElementById("feedback");
@@ -67,6 +75,20 @@
     } else if (type === "down") {
       feedbackTextarea.placeholder = "We're sorry to hear that. Please provide your feedback.";
     }
+  }
+
+  function submitFeedback() {
+    // Get the feedback text
+    const feedbackTextarea = document.getElementById("feedback");
+    const feedbackText = feedbackTextarea.value;
+    
+    // Reset the feedback form
+    feedbackTextarea.value = "";
+    const feedbackForm = document.getElementById("feedbackForm");
+    feedbackForm.style.display = "none";
+
+    // Perform any further actions with the feedback text
+    console.log("Feedback submitted:", feedbackText);
   }
 </script>
 
