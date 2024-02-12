@@ -1,0 +1,2 @@
+# thumbs
+Thumbs for TinySearch
