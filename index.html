@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thumb Feedback</title>
   <style>
+    /* Style the thumb container */
+    .thumb-container {
+      display: flex;
+      flex-direction: row-reverse; /* Align thumbs to the right */
+      align-items: center;
+      margin-right: 20px;
+    }
+
     /* Style the thumb icons */
     .thumb-icon {
       font-size: 36px;
@@ -35,12 +43,12 @@
     /* Style the feedback form */
     .feedback-form {
       display: none;
-      margin-top: 20px;
+      margin-left: 20px; /* Add margin for spacing */
     }
 
     /* Style the text area */
     #feedback {
-      width: 100%;
+      width: 300px; /* Adjust width as needed */
       padding: 10px;
       margin-top: 10px;
       resize: vertical;
@@ -48,7 +56,6 @@
 
     /* Style the submit button */
     .submit-button {
-      margin-top: 10px;
       padding: 10px 20px;
       background-color: #4CAF50;
       color: white;
@@ -65,11 +72,14 @@
 </head>
 <body>
 
-<!-- Thumb-up icon -->
-<span class="thumb-icon thumb-up" onclick="showFeedback('up')">👍</span>
+<!-- Thumb container -->
+<div class="thumb-container">
+  <!-- Thumb-up icon -->
+  <span class="thumb-icon thumb-up" onclick="showFeedback('up')">👍</span>
 
-<!-- Thumb-down icon -->
-<span class="thumb-icon thumb-down" onclick="showFeedback('down')">👎</span>
+  <!-- Thumb-down icon -->
+  <span class="thumb-icon thumb-down" onclick="showFeedback('down')">👎</span>
+</div>
 
 <!-- Feedback form -->
 <div id="feedbackForm" class="feedback-form">
