@@ -7,40 +7,59 @@
   <style>
     /* Style the thumb icons */
     .thumb-icon {
-      font-size: 24px;
+      font-size: 36px;
       margin: 10px;
       cursor: pointer;
+      transition: color 0.3s ease;
     }
 
     /* Style the thumb-up icon */
     .thumb-up {
-      color: grey;
+      color: #6ab04c;
     }
 
     /* Style the thumb-down icon */
     .thumb-down {
-      color: grey;
+      color: #e74c3c;
     }
 
     /* Change color on hover */
     .thumb-up:hover {
-      color: green;
+      color: #52ad3e;
     }
 
     .thumb-down:hover {
-      color: red;
+      color: #d73e29;
     }
 
     /* Style the feedback form */
     .feedback-form {
       display: none;
+      margin-top: 20px;
+    }
+
+    /* Style the text area */
+    #feedback {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      resize: vertical;
     }
 
     /* Style the submit button */
     .submit-button {
       margin-top: 10px;
-      padding: 5px 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
